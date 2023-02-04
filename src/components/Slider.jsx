@@ -3,6 +3,9 @@ import { useState } from "react";
 import React from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
+import { mobile } from "../responsive";
+
+
 const Div = styled.div`
   display: flex;
   overflow: hidden;
@@ -16,6 +19,7 @@ const Container = styled.div`
   background-color: #${(props) => props.bg};
   transform: translateX(${props=>props.slideIndex * -100}vw);
   transition: all 1.5s ease;
+  ${mobile({ display: "none" })}
 `;
 const Arrow = styled.div`
   width: 50px;
